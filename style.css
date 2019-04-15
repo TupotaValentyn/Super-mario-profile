@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Gloria Hallelujah', cursive;
-  
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,10 +15,10 @@ body {
 
 .wrapper {
   width: 100vw;
-  height: 200vh;
+  height: 300vh;
 }
 
-.top {
+.home {
   height: 100vh;
   background: url('https://mario.nintendo.com/assets/img/patterns/bg-red_2x.jpg');
   display: flex;
@@ -42,7 +42,6 @@ body {
 }
 
 .list-item {
-  margin: 0;
   position: relative;
   margin: 0 10px;
   width: 100%;
@@ -56,7 +55,6 @@ body {
   z-index: 1;
   background: url('https://mario.nintendo.com/assets/img/home/wrap-pipe.png') 0 0 no-repeat;
   top: -80px;
-/*   left: 0; */
   width: 100%;
   height: 140px;
   transform: scale(1, -1);
@@ -86,6 +84,16 @@ body {
 
 .list-item:hover::before {
   top: calc(50% + 8px);
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: transparent;
+  z-index: 9999;
+  position: absolute;
+  top: -10px;
 }
 
 .list.pipe-list {
@@ -155,4 +163,164 @@ h1 {
 
 @keyframes mushroom-run {
   to {left: calc(100% - 520px)}
+}
+
+.history-title {
+  font-size: 4em;
+  height: 100vh;
+  color: white;
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.history {
+  
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  justify-content: space-around;
+  height: 100vh;
+  background: #ccc;
+  background: url(https://mario.nintendo.com/assets/img/patterns/bg-yellow_2x.jpg);
+}
+
+.history-list {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 20%;
+}
+
+.history-item {
+  font-size: 1.1em;
+  width: 350px;
+  height: 25%;
+  color: white;
+  margin: 10px 0 0 0;
+  padding: 5px 10px;
+  background: transparent;
+  border-radius: 10px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.history-img {
+  position: relative;
+  background: url(https://mario.nintendo.com/assets/img/history/char-mario-right.png);
+  width: 100px;
+  background-position: 0 center;
+  height: 100vh;
+  background-size: contain;
+}
+
+.history-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100px;
+  background: url(https://mario.nintendo.com/assets/img/history/char-mario-right.png);;
+  height: 100vh;
+  width: 100px;
+  background-size: contain;
+  filter: invert(1);
+}
+
+.history-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100px;
+  background: url(https://mario.nintendo.com/assets/img/history/char-mario-right.png);;
+  height: 100vh;
+  width: 100px;
+  background-size: contain;
+  filter: invert(.2);
+}
+
+.about {
+  height: 100vh;
+  width: 100vw;
+  background: url(https://mario.nintendo.com/assets/img/patterns/bg-green_2x.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.about-title {
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  text-teransform: uppercase;
+  letter-spacing: 10px;
+  
+}
+
+.about-list {
+  display: flex;
+  list-style: none;
+  width: fit-content;
+  
+}
+
+.about-item {
+  width: 250px;
+  height: 260px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .5s ease;
+  margin: 5px;
+}
+
+.about-list > li.about-item {
+  background-size: contain;
+}
+
+.about-item:nth-of-type(1) {
+    background: #fff url(https://vignette.wikia.nocookie.net/we-are-daisy/images/2/2b/000.png/revision/latest?cb=20170606160211) center no-repeat;
+}
+
+.about-item:nth-of-type(2) {
+  background: #fff url(https://vignette.wikia.nocookie.net/newersupermariobroswii/images/6/6b/Piranha_Plant_Mario.png/revision/latest?cb=20180616012951) center no-repeat;
+}
+
+.about-item:nth-of-type(3) {
+  background: #fff url(https://i.kym-cdn.com/photos/images/original/001/307/924/998.png) center no-repeat;
+}
+
+.about-item:nth-of-type(4) {
+  background: #fff url(https://www.mariowiki.com/images/thumb/5/5c/SuperMarioParty_KoopaTroopa.png/1200px-SuperMarioParty_KoopaTroopa.png) center no-repeat;
+}
+
+.about-item:hover {
+  transform: scale(1.1);
+  margin: 0 20px;
+}
+
+.btn {
+  width: 400px;
+  height: 40px;
+  border: 1px solid #f5abc3;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  margin: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 2.5;
+  color: black;
+}
+
+.btn:hover {
+  border: 1px solid #fff;
+  background: #f5abc3;
 }
